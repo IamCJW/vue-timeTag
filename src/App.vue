@@ -1,19 +1,22 @@
 <template>
   <div id="app">
-    <timeTag :tag-list="tagList"/>
+    <sliderNav :call-back="changeDo" :nav-list="navList"/>
+    <tableFlex/>
   </div>
 </template>
 
 <script>
   import timeTag from './components/timeTag'
-
+  import sliderNav from './components/slider-nav'
+  import tableFlex from './components/table-flex'
   export default {
     name: 'App',
     components: {
-      timeTag
+      timeTag,sliderNav,tableFlex
     },
     data(){
       return{
+        navList:['最新音乐','我的最爱','系统消息'],
         tagList:[{
           title:'发布招标日期',
           time:'17/11/08'
@@ -31,6 +34,11 @@
           time:''
         }]
       }
+    },
+    methods:{
+      changeDo(index){
+        console.log(index)
+      }
     }
   }
 </script>
@@ -39,14 +47,5 @@
   html, body {
     margin: 0;
     padding: 0;
-  }
-
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
   }
 </style>
