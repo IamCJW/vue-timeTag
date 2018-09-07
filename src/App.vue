@@ -2,6 +2,7 @@
   <div id="app">
     <sliderNav :call-back="changeDo" :nav-list="navList"/>
     <tableFlex/>
+    <tableFlex :row="3" :size="10"/>
   </div>
 </template>
 

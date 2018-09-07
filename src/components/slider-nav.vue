@@ -64,6 +64,7 @@
       height 34px
       position absolute
       border-radius 34px
+      left 0
       background #ff5a60
       transition left .3s
     .nav-group
